@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 
 module.exports = {
@@ -15,8 +16,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(scss|css)$/,
+        test: /\.(s?css)$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
             loader: "style-loader",
           },
@@ -35,6 +37,14 @@ module.exports = {
             loader: "sass-loader",
           },
         ],
+      },
+      {
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/i,
+        type: "asset/resource",
+        generator: {
+          //filename: 'fonts/[name]-[hash][ext][query]'
+          filename: "fonts/[name][ext][query]",
+        },
       },
     ],
   },

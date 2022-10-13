@@ -1,3 +1,17 @@
-.column {
-  border: solid 1px black;
+.content {
+  background-color: beige;
+  border: 2px solid green;
+  height: 100vh;
+}
+
+.sidebar {
+  border: solid 2px black;
+}
+
+.content {
+  border: solid 2px red;
+}
+
+.description {
+  border: solid 2px green;
 }
