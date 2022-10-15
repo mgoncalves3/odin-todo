@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- miniCssExtractPlugin builds a .css file to ./dist so we need to link it -->
-  <link rel="stylesheet" href="main.css">
-  <title>Odin To Do App</title>
-</head>
-<body>
-  <div class="container content min-vh-100 border-start border-end">
-    <div class="row vh-100">
-      <div class="col-2 border-end bg-light">
-        <nav class="navbar navbar-light row">
-          <span class="navbar-brand h1 ">To Do</span>
-          <hr>
-          <button class="bg-light border-bottom">Your Todo's</button>
-          <button class="bg-light border-bottom">3</button>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- miniCssExtractPlugin builds a .css file to ./dist so we need to link it -->
+    <link rel="stylesheet" href="main.css" />
+    <title>Odin To Do App</title>
+  </head>
+  <body>
+    <div
+      class="container vh-100 bg-light border-start border-end"
+      id="app-window"
+    >
+      <div class="row bg-primary border-bottom header-h">
+        <div class="col h-100">
+          <header class="navbar h-100 m-0 ps-5" id="header">
+            <span class="navbar-brand fs-3 text-white">ToDo</span>
+          </header>
+        </div>
       </div>
-      <div class="col-10">10</div>
+      <div class="row content-h">
+        <div class="col-2 pt-1 ps-4 pe-4 border-end">
+          <nav class="navbar navbar-light">
+            <button type="button" class="btn btn-light w-100">
+              <i class="bi-calendar-event"></i>
+              Today
+            </button>
+            <button type="button" class="btn btn-light w-100">
+              <i class="bi-check-lg"></i>
+              Completed
+            </button>
+          </nav>
+        </div>
+        <main class="col-10 p-" id="main-content">
+          <div class="card bg-light border-0 pt-2 ms-5 me-5">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <p class="float-start m-auto">You need to build this app, ASAP.</p>
+                <i class="bi-circle float-end m-auto check-btn"></i>
+              </li>
+              <li class="list-group-item">
+                <p class="float-start m-auto">This is another item</p>
+                <i class="bi-circle float-end m-auto check-btn" width="18px" height="18px"></i>
+              </li>
+            </ul>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
-  <script src="main.bundle.js"></script>
-</body>
+    <script src="main.bundle.js"></script>
+  </body>
 </html>
