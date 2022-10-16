@@ -13,6 +13,20 @@
   height: 10vh;
 }
 
+.nav-title {
+  font-size: 2rem;
+}
+
+@media screen and (max-height: 600px) {
+  // .header-h {
+  //   height: 10vh;
+  // }
+
+  .nav-title {
+    font-size: 1rem;
+  }
+}
+
 .content-h {
   height: 90vh;
 }
