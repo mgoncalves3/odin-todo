@@ -33,8 +33,58 @@
             </button>
           </nav>
         </div>
-        <main class="col-10 p-" id="main-content">
-          <div class="card bg-light border-0 pt-2 ms-5 me-5">
+        <main class="col-10 pt-2 px-5" id="main-content">
+          <div class="accordion" id="todo-item-list">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="item-0">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-0"
+                  aria-expanded="false"
+                  aria-controls="collapse-0"
+                >
+                  Do this first. 
+                </button>
+              </h2>
+              <div
+                class="accordion-collapse collapse"
+                id="collapse-0"
+                aria-labelledby="item-0"
+              >
+                <div class="accordion-body d-flex justify-content-between">
+                  <p class="mb-0">You need to build this app, ASAP.</p>
+                  <i class="bi-circle check-btn"></i>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="item-1">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1"
+                  aria-expanded="false"
+                  aria-controls="collapse-1"
+                >
+                  Groceries
+                </button>
+              </h2>
+              <div
+                class="accordion-collapse collapse"
+                id="collapse-1"
+                aria-labelledby="item-1"
+              >
+                <div class="accordion-body d-flex justify-content-between">
+                  <p class="mb-0">Get Bread.</p>
+                  <i class="bi-circle check-btn"></i>
+                </div>
+              </div>
+            </di>
+          </div>
+          <!-- <div class="card bg-light border-0 pt-2 ms-5 me-5">
             <ul class="list-group">
               <li class="list-group-item">
                 <p class="float-start m-auto">You need to build this app, ASAP.</p>
@@ -45,7 +95,7 @@
                 <i class="bi-circle float-end m-auto check-btn" width="18px" height="18px"></i>
               </li>
             </ul>
-          </div>
+          </div> -->
         </main>
       </div>
     </div>
