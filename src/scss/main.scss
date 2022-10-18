@@ -38,19 +38,5 @@
   margin-left: auto;
   -webkit-transition: var(--bs-accordion-btn-icon-transition);
   transition: var(--bs-accordion-btn-icon-transition);
-}
-
-.item-desc::after {
-  -ms-flex-negative: 0;
-  display:inline-block;
-flex-shrink: 0;
-width: var(--bs-accordion-btn-icon-width);
-height: var(--bs-accordion-btn-icon-width);
-margin-left: auto;
-content: "";
-background-image: url('~/node_modules/bootstrap-icons/icons/circle.svg');
-background-repeat: no-repeat;
-background-size: var(--bs-accordion-btn-icon-width);
--webkit-transition: var(--bs-accordion-btn-icon-transition);
-transition: var(--bs-accordion-btn-icon-transition);
+  font-size: var(--bs-accordion-btn-icon-width);
 }
