@@ -16,25 +16,59 @@
       <div class="row bg-primary border-bottom header-h">
         <div class="col h-100">
           <header class="navbar h-100 m-0 ps-5" id="header">
-            <span class="navbar-brand text-white nav-title">ToDo</span>
+            <span class="navbar-brand text-white nav-title">Do this</span>
           </header>
         </div>
       </div>
       <div class="row content-h">
-        <div class="col-2 pt-1 ps-4 pe-4 border-end">
+        <div class="col-2 pt-1 border-end">
           <nav class="navbar navbar-light">
             <button type="button" class="btn btn-light w-100">
               <i class="bi-calendar-event"></i>
               Today
             </button>
-            <button type="button" class="btn btn-light w-100">
-              <i class="bi-check-lg"></i>
-              Completed
-            </button>
+
+            <div
+              class="btn btn-light w-100"
+              id="projects-accordion"
+            >
+              <div class="accordion">
+                <p class="accordion-header" id="projects-heading">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#projects-list"
+                    aria-expanded="false"
+                    aria-controls="projects-list"
+                  >
+                    <i class="bi bi-collection"></i>
+                    Projects
+                  </button>
+                </p>
+                <div id="projects-list" class="accordion-collapse collapse" aria-labelledby="projects-heading" data-bs-parent="#projects-accordion">
+                  <div class="accordion-body">
+                    <button>Test</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <button
+              type="button"
+              class="accordion btn btn-light w-100"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-collection"></i>
+              Projects
+            </button> -->
           </nav>
         </div>
+
         <main class="col-10 pt-2 px-5" id="main-content">
           <div class="accordion" id="todo-item-list">
+            <!-- Accordion item/Card example start -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="item-0">
                 <button
@@ -45,21 +79,41 @@
                   aria-expanded="false"
                   aria-controls="collapse-0"
                 >
-                  Do this first. 
+                  Do this first.
                 </button>
               </h2>
+              <!-- .show controls wether item is expanded -->
               <div
                 class="accordion-collapse collapse"
                 id="collapse-0"
                 aria-labelledby="item-0"
               >
-                <div class="accordion-body d-flex justify-content-between">
+                <div class="accordion-body justify-content-between">
                   <p class="mb-0">You need to build this app, ASAP.</p>
-                  <i class="bi bi-circle check-btn m-0"></i>
-                  
+                  <div
+                    class="item-actions-wrapper d-flex justify-content-between"
+                  >
+                    <div class="due-date d-flex align-items-end opacity-75">
+                      <p class="p-0 m-0">Due:</p>
+                      <p class="date-value m-0 ps-1">25-12-2022</p>
+                    </div>
+                    <div
+                      class="actions-btns d-inline-flex align-items-baseline"
+                    >
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary me-3"
+                      >
+                        Edit
+                      </button>
+                      <i class="bi bi-circle check-btn m-0"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- Accordion item/card example end -->
+
             <div class="accordion-item">
               <h2 class="accordion-header" id="item-1">
                 <button
@@ -83,20 +137,72 @@
                   <i class="bi bi-circle check-btn"></i>
                 </div>
               </div>
-            </di>
+            </div>
           </div>
-          <!-- <div class="card bg-light border-0 pt-2 ms-5 me-5">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <p class="float-start m-auto">You need to build this app, ASAP.</p>
-                <i class="bi-circle float-end m-auto check-btn"></i>
-              </li>
-              <li class="list-group-item">
-                <p class="float-start m-auto">This is another item</p>
-                <i class="bi-circle float-end m-auto check-btn" width="18px" height="18px"></i>
-              </li>
-            </ul>
-          </div> -->
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary add-task-btn mx-5"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Add task
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form action="">
+                  <div class="modal-header">
+                    <div class="form-floating mb-3 task-title w-100">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="task-title"
+                        placeholder="Title"
+                      />
+                      <label for="task-title">Title</label>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-close ms-3"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control form-floating"
+                        id="task-text"
+                        placeholder="Task"
+                      ></textarea>
+                      <label for="task-text">Task</label>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </div>

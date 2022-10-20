@@ -1,11 +1,6 @@
 // Importing every .css class from Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-@function height($x, $y) {
-  $result: $x - $y;
-  @return $result;
-}
-
 // Write css
 .header-h {
   height: 10vh;
@@ -15,21 +10,12 @@
   font-size: 2rem;
 }
 
-@media screen and (max-height: 600px) {
-  // .header-h {
-  //   height: 10vh;
-  // }
-
-  .nav-title {
-    font-size: 1rem;
-  }
-}
-
 .content-h {
   height: 90vh;
 }
 
-.check-btn {
+
+.bi {
   cursor: pointer;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -39,4 +25,51 @@
   -webkit-transition: var(--bs-accordion-btn-icon-transition);
   transition: var(--bs-accordion-btn-icon-transition);
   font-size: var(--bs-accordion-btn-icon-width);
+}
+
+.accordion-header {
+  width: 100%;
+}
+
+
+.accordion-item {
+  position: relative;
+}
+.accordion-item::before{
+  border-style: solid;
+  border-color: red;
+  height: 100%;
+  width: 0px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1000; 
+}
+.accordion-item:first-child::before {
+  border-top-left-radius: 6px;
+}
+
+.accordion-item:last-child::before {
+  border-bottom-left-radius: 6px;
+  border-color: gold;
+}
+
+.due-date p{
+  font-size: .8rem;
+}
+
+#main-content {
+  position: relative;
+}
+
+.add-task-btn {
+  width: auto;
+  margin-top: 1rem;
+  position: absolute;
+  right: 0px;
+}
+
+textarea.form-control {
+  min-height: calc(1.5em + 5rem + 2px);
 }
