@@ -28,30 +28,35 @@
               Today
             </button>
 
-            <div
-              class="btn btn-light w-100"
-              id="projects-accordion"
-            >
-              <div class="accordion">
-                <p class="accordion-header" id="projects-heading">
+            <div class="btn btn-light w-100 p-0" id="projects-accordion">
+              <!-- <div class="accordion bg-transparent" id="projects-heading"> -->
+                <div class="accordion">
                   <button
-                    class="accordion-button collapsed"
+                    class="accordion-header bg-transparent border-0 w-100 p-1"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#projects-list"
                     aria-expanded="false"
                     aria-controls="projects-list"
+                    id="projects-heading"
                   >
                     <i class="bi bi-collection"></i>
                     Projects
                   </button>
-                </p>
-                <div id="projects-list" class="accordion-collapse collapse" aria-labelledby="projects-heading" data-bs-parent="#projects-accordion">
+                  <div
+                  id="projects-list"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="projects-heading"
+                  data-bs-parent="#projects-accordion"
+                  >
                   <div class="accordion-body">
-                    <button>Test</button>
+                    <button class="btn btn-outline-primary">
+                      Test
+                    </button>
                   </div>
                 </div>
               </div>
+              <!-- </div> -->
             </div>
 
             <!-- <button
@@ -92,17 +97,18 @@
                   <p class="mb-0">You need to build this app, ASAP.</p>
                   <div
                     class="item-actions-wrapper d-flex justify-content-between"
-                  >
-                    <div class="due-date d-flex align-items-end opacity-75">
+                    >
+                    <!-- <div class="due-date d-flex align-items-end opacity-75"> -->
+                    <div class="due-date hstack align-items-end opacity-75">
                       <p class="p-0 m-0">Due:</p>
                       <p class="date-value m-0 ps-1">25-12-2022</p>
                     </div>
                     <div
-                      class="actions-btns d-inline-flex align-items-baseline"
+                      class="actions-btns d-inline-flex align-items-start"
                     >
                       <button
                         type="button"
-                        class="btn btn-outline-primary me-3"
+                        class="btn btn-outline-primary btn-sm me-3"
                       >
                         Edit
                       </button>
@@ -132,9 +138,27 @@
                 id="collapse-1"
                 aria-labelledby="item-1"
               >
-                <div class="accordion-body d-flex justify-content-between">
+                <div class="accordion-body justify-content-between">
                   <p class="mb-0">Get Bread.</p>
-                  <i class="bi bi-circle check-btn"></i>
+                  <div
+                    class="item-actions-wrapper d-flex justify-content-between"
+                  >
+                    <div class="due-date hstack align-items-end opacity-75">
+                      <p class="p-0 m-0">Due:</p>
+                      <p class="date-value m-0 ps-1">09-01-2023</p>
+                    </div>
+                    <div
+                      class="actions-btns hstack align-items-start"
+                    >
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary btn-sm me-3"
+                      >
+                        Edit
+                      </button>
+                      <i class="bi bi-circle check-btn m-0"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
