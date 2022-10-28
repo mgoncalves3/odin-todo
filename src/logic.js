@@ -1,4 +1,4 @@
-import { taskList } from "./index.js";
+import { taskList, modal } from "./index.js";
 
 // New task template
 export function createTask(title, description) {
@@ -93,5 +93,6 @@ export function createTask(title, description) {
   itemBody.appendChild(descContainer);
   item.appendChild(itemBody);
 
+  modal.reset();
   return item;
 }
