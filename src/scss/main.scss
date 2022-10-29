@@ -1,6 +1,6 @@
 // Importing every .css class from Bootstrap
 @import "~bootstrap/scss/bootstrap";
-// @import "~bootstrap"
+@import "~/node_modules/vanillajs-datepicker/sass/datepicker-bs5";
 
 // Write css
 .header-h {
@@ -14,7 +14,6 @@
 .content-h {
   height: 90vh;
 }
-
 
 .bi {
   cursor: pointer;
@@ -32,20 +31,19 @@
   width: 100%;
 }
 
-
 .accordion-item {
   position: relative;
 }
-.accordion-item::before{
+.accordion-item::before {
   border-style: solid;
   border-color: red;
   height: 100%;
   width: 0px;
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 1000; 
+  z-index: 1000;
 }
 .accordion-item:first-child::before {
   border-top-left-radius: 6px;
@@ -56,8 +54,8 @@
   border-color: gold;
 }
 
-.due-date p{
-  font-size: .8rem;
+.due-date p {
+  font-size: 0.8rem;
 }
 
 #main-content {
@@ -71,6 +69,24 @@
   right: 0px;
 }
 
+.form-floating {
+  margin-bottom: 1rem;
+}
+
 textarea.form-control {
   min-height: calc(1.5em + 5rem + 2px);
+}
+
+// Date picker
+.input-group-text {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-addon {
+  cursor: pointer;
+}
+
+.input-group.date {
+  text-transform: uppercase;
 }

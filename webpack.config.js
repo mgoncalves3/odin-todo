@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new miniCssExtractPlugin()
+    new miniCssExtractPlugin(),
   ],
   devServer: {
     static: {

@@ -1,4 +1,5 @@
 import { taskList, modal } from "./index.js";
+import { Datepicker } from "vanillajs-datepicker";
 
 // New task template
 export function createTask(title, description) {
@@ -96,3 +97,21 @@ export function createTask(title, description) {
   modal.reset();
   return item;
 }
+
+// Date picker
+// ### https://mymth.github.io/vanillajs-datepicker/#/
+const isMobileDevice = window.navigator.userAgent
+  .toLowerCase()
+  .includes("mobi");
+const dateInput = document.getElementById("date-picker");
+
+if (isMobileDevice) {
+  dateInput.type = 'date';
+} else {
+  const datepicker = new Datepicker(dateInput, {
+    buttonClass: "btn",
+    orientation: "bottom auto",
+    todayBtn: true,
+  });
+}
+
