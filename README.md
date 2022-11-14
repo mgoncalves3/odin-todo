@@ -18,5 +18,4 @@
 ---
 ### I'll try
 - Use date-fns library
-- Not use CSS library
-- Follow [Material UI 3](https://m3.material.io/) design language and [icons](https://fonts.google.com/icons)
+- Not use CSS library or maybe Tailwind
