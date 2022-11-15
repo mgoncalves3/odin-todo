@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo list</title>
-</head>
-<body>
-  <div class="app">
-    <div class="todos-wrapper">
-      <div class="new-task-modal-btn">
-        <button type="button" class="new-task-btn modal-show">Add a task</button>
-      </div>
-
-      <h2 class="">List</h2>
-      <ul class="todo-list" id="todo-list">
-        <li class="todo-item" data-taskNum="1">
-          <p class="item-title">Clean desk</p>
-          <button type="button" class="delete-task-btn">Delete</button>
-          <p class="item-description">Organize and clean my clean</p>
-          <p class="item-due-date">2022-12-25</p>
-        </li>
-      </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Todo List</h1>
+      </header>
+      <section class="sidebar">
+        <nav class="navbar">
+          <button class="new-todo-btn-open-modal">Add a task</button>
+          <ul>
+            <li class="nav-item"><a href="#" class="nav-link">All todos</a></li>
+          </ul>
+        </nav>
+      </section>
+      <main class="todos-container">
+        <div class="todos-header">
+          <p class="current-project">All todos</p>
+        </div>
+        <ul class="item-list">
+          <li class="todo-item">
+            <div class="todo-wrapper">
+              <button type="check-button">
+                <span class="material-icons-outlined"> circle </span>
+              </button>
+              <div class="todo-text">
+                <p class="todo-title">
+                  Clean
+                </p>
+                <p class="todo-description">
+                  Make the bed and dust room
+                </p>
+              </div>
+              <div class="todo-date-priority">
+                <span class="material-icons-sharp priority" style="color: red;">circle</span>
+                <p class="due-date">Due: 2023-01-05</p>
+              </div>
+              <div class="todo-menu-dropdown">
+                <button type="button" class="show-dropdown-btn">
+                  <span class="material-icons-outlined">more_vert</span>
+                </button>
+                <div class="dropdown visible">
+                  <button type="button">Edit</button>
+                  <button type="button">Delete</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="todo-item">
+            <div class="todo-wrapper">
+              <button type="check-button">
+                <span class="material-icons-outlined"> circle </span>
+              </button>
+              <div class="todo-text">
+                <p class="todo-title">
+                  Exercise
+                </p>
+                <p class="todo-description">
+                  Do push ups and squats
+                </p>
+              </div>
+              <div class="todo-menu-dropdown">
+                <button type="button" class="show-dropdown-btn">
+                  <span class="material-icons-outlined">more_vert</span>
+                </button>
+                <div class="dropdown visible">
+                  <button type="button">Edit</button>
+                  <button type="button">Delete</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="todo-item">
+            <div class="todo-wrapper">
+              <button type="check-button">
+                <span class="material-icons-outlined"> circle </span>
+              </button>
+              <div class="todo-text">
+                <p class="todo-title">
+                  Meditate
+                </p>
+                <p class="todo-description">
+                  30min meditation session
+                </p>
+              </div>
+              <div class="todo-menu-dropdown">
+                <button type="button" class="show-dropdown-btn">
+                  <span class="material-icons-outlined">more_vert</span>
+                </button>
+                <div class="dropdown visible">
+                  <button type="button">Edit</button>
+                  <button type="button">Delete</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </main>
     </div>
-
-    <form action="" class="new-task-form hidden">
-      <label for="form-task-title">Title</label>
-      <input type="text" name="new-task-title" id="form-task-title" value="Test">
-      <label for="form-task-description">Description</label>
-      <input type="text" name="new-task-description" id="form-task-description" value="Testing">
-      <label for="form-date-pick">Due date</label>
-      <input type="date" name="" id="form-date-pick" value="2023-01-01">
-      <button type="button">Add task</button>
-    </form>
-  </div>
-  <script src="./bundle.js"></script>
-</body>
+    <script src="./bundle.js"></script>
+  </body>
 </html>
