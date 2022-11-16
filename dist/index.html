@@ -26,8 +26,9 @@
         <ul class="item-list">
           <li class="todo-item">
             <div class="todo-wrapper">
-              <button type="check-button">
-                <span class="material-icons-outlined"> circle </span>
+              <button type="button" class="check-button">
+                <span class="material-icons-outlined circle"> circle </span>
+                <span class="material-icons-outlined checked">check_circle</span>
               </button>
               <div class="todo-text">
                 <p class="todo-title">
@@ -42,66 +43,48 @@
                 <p class="due-date">Due: 2023-01-05</p>
               </div>
               <div class="todo-menu-dropdown">
-                <button type="button" class="show-dropdown-btn">
-                  <span class="material-icons-outlined">more_vert</span>
-                </button>
-                <div class="dropdown visible">
-                  <button type="button">Edit</button>
-                  <button type="button">Delete</button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="todo-item">
-            <div class="todo-wrapper">
-              <button type="check-button">
-                <span class="material-icons-outlined"> circle </span>
-              </button>
-              <div class="todo-text">
-                <p class="todo-title">
-                  Exercise
-                </p>
-                <p class="todo-description">
-                  Do push ups and squats
-                </p>
-              </div>
-              <div class="todo-menu-dropdown">
-                <button type="button" class="show-dropdown-btn">
-                  <span class="material-icons-outlined">more_vert</span>
-                </button>
-                <div class="dropdown visible">
-                  <button type="button">Edit</button>
-                  <button type="button">Delete</button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="todo-item">
-            <div class="todo-wrapper">
-              <button type="check-button">
-                <span class="material-icons-outlined"> circle </span>
-              </button>
-              <div class="todo-text">
-                <p class="todo-title">
-                  Meditate
-                </p>
-                <p class="todo-description">
-                  30min meditation session
-                </p>
-              </div>
-              <div class="todo-menu-dropdown">
-                <button type="button" class="show-dropdown-btn">
-                  <span class="material-icons-outlined">more_vert</span>
-                </button>
-                <div class="dropdown visible">
-                  <button type="button">Edit</button>
-                  <button type="button">Delete</button>
-                </div>
+                <span class="material-icons-outlined more-options-btn">more_vert</span>
+                  <ul class="dropdown">
+                    <li><button type="button">Edit</button></li>
+                    <li><button type:="button">Delete</button></li>
+                  </ul>
               </div>
             </div>
           </li>
         </ul>
       </main>
+      <!-- MODAL -->
+      <div class="modal-background-overlay" data-openStatus="closed" id="modal-background">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Add a new task</h2>
+            <span class="material-icons-outlined modal-close-btn" id="modal-close-btn">close</span>
+          </div>
+          <div class="modal-title">
+            <label for="task-title">Title</label>
+            <input type="text" name="task-title" id="task-title">
+          </div>
+          <div class="modal-body">
+            <label for="task-description">Description</label>
+            <textarea name="task-description" id="task-description" rows="8" cols="72"></textarea>
+          </div>
+          <div class="modal-footer">
+            <div class="modal-date-priority">
+              <label for="task-due-date">Due:</label>
+              <input type="date" name="task-due-date" id="task-due-date">
+                <label for="task-priority">Priority:</label>
+                <select name="task-priority" id="task-priority">
+                  <option value="0">Low</option>
+                  <option value="1">Medium</option>
+                  <option value="2">High</option>
+                </select>
+            </div>
+            <div class="modal-submit-form-btn">
+              <button type="button">Add task</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./bundle.js"></script>
   </body>
