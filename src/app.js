@@ -3,7 +3,7 @@ import "./styles.scss";
 import "material-icons/css/material-icons.css";
 
 // Animate list item dropdown menu
-
+!!!!!!!!
 function bindDropdownBtns() {
   let dropdownShowBtns = document.querySelectorAll(".more-options-btn");
   const dropdownMenu = document.querySelectorAll(".dropdown");
