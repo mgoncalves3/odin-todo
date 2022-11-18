@@ -2,38 +2,42 @@ import "./styles.css";
 import "./styles.scss";
 import "material-icons/css/material-icons.css";
 
-// Animate list item dropdown menu
-!!!!!!!!
-function bindDropdownBtns() {
-  let dropdownShowBtns = document.querySelectorAll(".more-options-btn");
-  const dropdownMenu = document.querySelectorAll(".dropdown");
-
-  dropdownShowBtns.forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-      if (btn.classList.contains('visible')) {
-        dropdownMenu[i].classList.remove('visible');
-      } else {
-        dropdownMenu[i].classList.add('visible');
-      }
-    });
-  });
+// * Animate list item dropdown menu
+function handleDropdownBtns(e) {
+  // Select all the dropdown buttons
+  let dropdownBtns = document.getElementsByClassName("more-options-btn");
+  // We pass the event to this function
+  // When an event is fired, go through every btn in the page
+  // if any btn is the target of the click event, then toggle the dropdown menu
+  for (let btn of dropdownBtns) {
+    if (e.type === "click" && e.target === btn) {
+      btn.nextElementSibling.classList.toggle("visible");
+    }
+  }
 }
 
-// ! TODO
-// ! bind the buttons on load and change
-const itemList = document.getElementById('item-list');
-window.addEventListener("DOMContentLoaded", bindDropdownBtns);
+// * Mutation Observer API
+// Get where to look for changes
+const itemList = document.getElementById("item-list");
+// Object with which changes to look for
 const observerOptions = {
-  childList: true
-}
-let todoCountObserver = new MutationObserver(bindDropdownBtns);
+  childList: true,
+};
+
+// * Click event handler
+window.addEventListener("click", handleDropdownBtns);
+// Create the MutationObserver
+let todoCountObserver = new MutationObserver(handleDropdownBtns);
+// Call the observe function and pass in the arguments.
+// We are now looking for changes in itemList
 todoCountObserver.observe(itemList, observerOptions);
 
-// Open/Close add task modal
+// * Open/Close add task modal
 const modal = document.getElementById("modal-background");
 const addTaskBtn = document.querySelector(".new-todo-btn-open-modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 
+// * Open the add todo modal
 addTaskBtn.addEventListener("click", () => {
   modal.style.display = "flex";
   modal.setAttribute("data-openstatus", "open");
@@ -55,17 +59,12 @@ modalAddBtn.addEventListener("click", (e) => {
 });
 
 const taskList = document.getElementById("item-list");
-// const template = document.getElementById("new-task-template");
-// const itemTemplate = template.content.cloneNode(true);
-// console.log(itemTemplate);
 
 function createNewTask() {
   let newTask = {
     title: document.querySelector("#task-title").value,
     description: document.querySelector("#task-description").value,
-    priority: function () {
-
-    },
+    priority: function () {},
     date: document.querySelector("#task-due-date").value,
   };
 
@@ -75,18 +74,6 @@ function createNewTask() {
 function addToHtml(Object) {
   const template = document.getElementById("new-task-template");
   const itemTemplate = template.content.cloneNode(true);
-  // const idList = [
-  //   "new-task-template-title",
-  //   "new-task-template-description",
-  //   "new-task-template-priority",
-  //   "new-task-template-date",
-  // ];
-
-  // idList.forEach((elem) => {
-  //   let htmlToAdd = itemTemplate.getElementById(elem);
-
-  //   console.log(htmlToAdd);
-  // });
 
   let newTitle = itemTemplate.getElementById("new-task-template-title");
   let newDesc = itemTemplate.getElementById("new-task-template-description");
