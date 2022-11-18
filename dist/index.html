@@ -23,7 +23,36 @@
         <div class="todos-header">
           <p class="current-project">All todos</p>
         </div>
-        <ul class="item-list">
+        <ul class="item-list" id="item-list">
+
+          <template id="new-task-template">
+            <li class="todo-item">
+              <div class="todo-wrapper">
+                <button type="button" class="check-button">
+                  <span class="material-icons-outlined circle">circle</span>
+                  <span class="material-icons-outlined checked">check_circle</span>
+                </button>
+                <div class="todo-text">
+                  <p class="todo-title" id="new-task-template-title">
+                  </p>
+                  <p class="todo-description" id="new-task-template-description">
+                  </p>
+                </div>
+                <div class="todo-date-priority">
+                  <span class="material-icons-sharp priority" style="" id="new-task-template-priority">circle</span>
+                  <p class="due-date" id="new-task-template-date"></p>
+                </div>
+                <div class="todo-menu-dropdown">
+                  <span class="material-icons-outlined more-options-btn">more_vert</span>
+                    <ul class="dropdown">
+                      <li><button type="button">Edit</button></li>
+                      <li><button type:="button">Delete</button></li>
+                    </ul>
+                </div>
+              </div>
+            </li>
+          </template>
+
           <li class="todo-item">
             <div class="todo-wrapper">
               <button type="button" class="check-button">
@@ -80,7 +109,7 @@
                 </select>
             </div>
             <div class="modal-submit-form-btn">
-              <button type="button">Add task</button>
+              <button type="button" class="modal-add-btn">Add task</button>
             </div>
           </div>
         </div>
